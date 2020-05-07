@@ -57,27 +57,31 @@ function check_web_storage_support() {
         return(false);
     }
 }
-function display_saved_note() {
-    if(check_web_storage_support() == true) {
-        result = localStorage.getItem('userText');
-    }
-    if(result === null) {
-        result = "No note saved";
-    }
-    document.getElementById('userText').value = result;
-}
 function save() {
     if(check_web_storage_support() == true) {
-        var area = document.getElementById("userText");
-        if(area.value != '') {
-            localStorage.setItem("userText", area.value);
+        var area = document.getElementById("userText").innerText;
+        if(area != '') {
+            localStorage.setItem("userText", area);
+            console.log(area)
         }
         else {
             alert("Nothing to save");
         }
     }
-    console.log(area.value)
+    
+}
+function display_saved_note() {
+    if(check_web_storage_support() == true) {
+        result = localStorage.getItem("userText");
+        console.log(result)
+    }
+    if(result === null) {
+        result = "No note saved";
+    }
+    document.getElementById('userText').innerHTML = result;
 }
 
-window.onload = display_saved_note, check_web_storage_support;
+
+
+// window.onload = display_saved_note, check_web_storage_support;
    
