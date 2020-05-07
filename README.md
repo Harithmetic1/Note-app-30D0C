@@ -2,4 +2,4 @@
 
 https://harithmetic1.github.io/Note-app-30D0C/
 
-Save button doesn't work yet
+Save button works, reload the page to remove saved task and add new saved tasks
